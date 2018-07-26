@@ -93,7 +93,8 @@ class EdamamSearch extends React.Component {
     // const newState = { ...this.state };
     //mark recipe as "liked"
     if (btnType === "heart" && this.state.like === false) {
-      this.setState({ like: true });
+      this.setState((prevState, props) => ({ 
+          like: !prevState.like });
       console.log("liked!");
       console.log(this.state);
     //mark recipe as "unliked"
